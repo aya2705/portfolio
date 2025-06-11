@@ -87,21 +87,12 @@ body {
   cursor: pointer;
 }
 
-
-
-/* Style de base pour la navbar */
 .navbar {
   display: flex;
-  /* Utilisation de Flexbox pour aligner les éléments en ligne */
   justify-content: space-evenly;
-  /* Distribuer l'espace uniformément entre les éléments */
   align-items: center;
-  /* Aligner les éléments verticalement au centre */
   width: 100%;
-  /* S'assurer que la navbar occupe toute la largeur disponible */
 }
-
-
 
 .navbar a:hover,
 .navbar a.active {
@@ -113,9 +104,83 @@ body {
   font-size: 3.6rem;
   color: var(--main-color);
   display: none;
+  z-index: 6;
 }
 
-/* Styles de la modal et du flou */
+
+/* !!! Reponsive Header */
+@media (max-width: 992px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .navbar.active {
+    height: 300px; 
+  }
+
+  .navbar a, .contactBtn {
+    margin: 1rem 0;
+    display: block;
+  }
+
+  #menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 2.5rem;
+    width: auto;
+  }
+
+  .contactBtn {
+    width: 80%;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .navbar.active {
+    height: 300px;
+  }
+
+  .navbar a, .contactBtn {
+    margin: 1rem 0;
+    display: block;
+  }
+}
+
 .blur-overlay {
   position: fixed;
   top: 0;
@@ -396,7 +461,6 @@ span {
 
 .text-animation span::after {
   content: " ";
-  /* background-color: var(--bg-background); */
   background-color: #081b29;
   position: absolute;
   width: calc(100% +8px);
@@ -411,26 +475,6 @@ span {
     border-left: 2px solid var(--main-color);
   }
 }
-
-/* @keyframes words{
-  0%,
-  20%{
-    content:"Frontend Designer";
-  }
-  21%,40%{
-    content:"Web Developer";
-  }
-  41%,60%{
-    content: "UI/ UX designer";
-  }
-  61%,80%{
-    content: "Web Developper";
-  }
-  81%,100%{
-    content: "Software Tester";
-  }
-} */
-
 @keyframes typing {
 
   10%,
@@ -459,6 +503,107 @@ span {
   }
 }
 
+/* !!!! Responsive home section */
+
+@media (max-width: 1200px) {
+  .home {
+    gap: 5rem;
+    padding: 8rem 5%;
+  }
+
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 3rem;
+  }
+
+  .home-content p {
+    font-size: 1.3rem;
+    min-width: unset;
+  }
+
+  .home-img img {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 8rem 5% 5rem;
+  }
+
+  .home-content {
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .home-img img {
+    width: 45vw;
+    top: 0;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-icons a {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .home-img img {
+    width: 60vw;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .social-icons a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+}
+
 /* Education section */
 .education {
   display: flex;
@@ -478,9 +623,8 @@ span {
 }
 
 .timeline {
-  width: 80%;
-  height: auto;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -518,8 +662,11 @@ span {
 
 .timeline-component {
   margin: 0px 20px 20px 20px;
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
+
 }
+
 
 .timeline-component h3 {
   font-size: 20px;
@@ -533,12 +680,29 @@ span {
   font-size: large;
 }
 
+/* !!! Responsive Education section */
+@media screen and (max-width: 767px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .timeline-middle {
+    display: none; 
+  }
+
+  .timeline-component {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .timeline {
     display: grid;
     grid-template-columns: 1fr 3px 1fr;
+    
   }
 
   .timeline-middle {
@@ -550,6 +714,9 @@ span {
 
   .main-middle {
     opacity: 0;
+  }
+  .timeline-component {
+    width: 100%;
   }
 
   .timeline-circle {
@@ -563,19 +730,26 @@ span {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-}
 
+  .timeline-component:nth-child(6n + 1),
+  .timeline-component:nth-child(6n + 2) {
+    justify-self: start;
+  }
+
+  .timeline-component:nth-child(6n + 4),
+  .timeline-component:nth-child(6n + 5) {
+    justify-self: end;
+  }
+}
 
 /* skills section */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
 }
-
-
-
 
 .sub-title {
   text-align: center;
@@ -587,6 +761,9 @@ span {
 .sub-title span {
   color: #0ef;
 }
+
+
+
 
 .sub-title,
 .project .heading,
@@ -612,17 +789,18 @@ span {
 .skills {
   display: flex;
   justify-content: center;
-  /* Centre les containers */
-  gap: 40;
-  /* Ajoute un espace entre les deux containers */
+  gap: 40px;
 }
 
 .container,
 .container1 {
-  flex: 1;
-  /* Permet aux containers de prendre chacun 50% de la largeur */
-  max-width: 100%;
-  /* Garde les mêmes dimensions */
+  flex: 1 1 400px;
+  max-width: 600px;
+  width: 100%;
+  background: #000;
+  padding: 20px;
+  border-radius: 7px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container {
@@ -770,16 +948,18 @@ span {
   width: 90%;
   border-radius: 6px;
   background: #4070f4;
-  animation: progress 0.4s ease-in-out forwards;
-  opacity: 0;
+  animation: progress 0.4s ease-in-out forwards, fadeIn 0.4s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-.skill-per.css,
-.skill-per.problem {
+.skill-per.css{
   width: 70%;
   animation-delay: 0.1s;
 }
-
 
 .skill-per.springboot,
 .skill-per.react {
@@ -794,6 +974,39 @@ span {
   margin-left: 35px;
 }
 
+/* !!!!responsive */
+@media (max-width: 1024px) {
+  .container .skill-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container,
+  .container1 {
+    max-width: 90%;
+  }
+
+  .container .skill-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-title {
+    font-size: 36px;
+  }
+
+  .container .technical,
+  .container1 .professional {
+    font-size: 22px;
+  }
+}
 
 /* ! */
 @keyframes progress {
@@ -855,8 +1068,7 @@ span {
 .skill-per.java,
 .skill-per.laravel,
 .skill-per.javascript,
-.skill-per.tailwind,
-.skill-per.flexibility {
+.skill-per.tailwind{
   width: 80%;
   animation-delay: 0.1s;
 }
@@ -864,9 +1076,7 @@ span {
 
 .skill-per.c,
 .skill-per.database,
-.skill-per.github,
-.skill-per.communication,
-.skill-per.teamWork {
+.skill-per.github{
   width: 90%;
   animation-delay: 0.1s;
 }
@@ -922,49 +1132,43 @@ span {
 /* ! Projects*/
 
 
-
 .projects {
   background-color: black;
   display: flex;
   justify-content: center;
-  /* Centre horizontalement */
   align-items: center;
-  /* Centre verticalement */
   min-height: 100vh;
-  /* Assure que la section prend toute la hauteur de l'écran */
   padding: 50px 0;
 }
 
 .contain {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin-top: 50px;
-  /* Ajuste l'espacement */
 }
-
-/* Grille des projets */
-.grid {
+.grid-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* ça c’est pareil */
+  /* ou mieux : */
+  grid-template-columns: repeat(3, 1fr); /* mais ça limite la largeur à 1fr par colonne */
   gap: 20px;
   justify-content: center;
-  /* Centre les cartes dans la grille */
   margin-top: 50px;
-  /* Ajuste la position verticale */
+  max-width: 1500px; /* augmente la largeur max de la zone conteneur */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Style des cartes */
 .card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  max-width: 500px;
-  /* Limite la largeur des cartes */
+  max-width: 600px;
   margin: auto;
-  /* Centre chaque carte */
   max-height: 900px;
+  width: 100%;
 }
 
 .card:hover {
@@ -972,17 +1176,20 @@ span {
   box-shadow: 0 0 25px var(--main-color);
 }
 
+
 .card img {
   width: 100%;
   height: 250px;
+  margin-top: 10px;
   object-fit: cover;
 }
 
-/* Contenu de la carte */
+
+
+
 .card-content {
   padding: 20px;
   text-align: center;
-  /* Centre le texte */
 }
 
 .card-content h3 {
@@ -1003,14 +1210,14 @@ span {
   line-height: 1.5;
 }
 
-/* Tags */
+
 .tags {
   margin-top: 15px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  /* Centre les tags */
+  
 }
 
 .tags span {
@@ -1047,6 +1254,81 @@ span {
   background-color: #0366d6;
 }
 
+
+/* !!!Resposive projects Style */
+
+@media (max-width: 1024px) {
+  .projects {
+    padding: 40px 20px;
+  }
+
+  .card-content h3 {
+    font-size: 1.8em;
+  }
+
+  .card-content p {
+    font-size: 1.1em;
+  }
+
+  .github-btn {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 30px 15px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-content h3 {
+    font-size: 1.6em;
+  }
+
+  .card-content p {
+    font-size: 1em;
+  }
+
+  .tags span {
+    font-size: 0.85em;
+    padding: 4px 10px;
+  }
+
+  .github-btn {
+    font-size: 0.95em;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card-content h3 {
+    font-size: 1.4em;
+  }
+
+  .card-content p {
+    font-size: 0.95em;
+  }
+
+  .github-btn {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+}
+
+
 /* !!!!! Clubs*/
 
 .contain-extra {
@@ -1055,10 +1337,8 @@ span {
 
 .contain-extra .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* Afficher 5 cartes par ligne */
   gap: 2rem;
-  /* Espacement entre les cartes */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .contain-extra .card {
@@ -1074,10 +1354,6 @@ span {
   height: auto;
   display: block;
 }
-
-/* .contain-extra .card-content {
-  padding: 1.5rem;
-} */
 
 .contain-extra .card h3 {
   font-size: 1.6rem;
@@ -1142,32 +1418,28 @@ span {
   width: 50px;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .contain-extra .grid {
     grid-template-columns: repeat(4, 1fr);
-    /* 4 cartes par ligne */
   }
 }
 
 @media (max-width: 900px) {
   .contain-extra .grid {
     grid-template-columns: repeat(3, 1fr);
-    /* 3 cartes par ligne */
   }
 }
 
 @media (max-width: 600px) {
   .contain-extra .grid {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 cartes par ligne */
   }
 }
 
 @media (max-width: 400px) {
   .contain-extra .grid {
     grid-template-columns: 1fr;
-    /* 1 carte par ligne */
+   
   }
 }
 

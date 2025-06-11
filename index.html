@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aya Touicha</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <script src="https://cdn.tailwindcss.com"></script>
@@ -156,7 +156,7 @@
             <div class="timeline-component timeline-content">
                 <h3>Internship at The General Treasury of the Kingdom</h3>
                 <p class="date">August 2024</p>
-                <p>During this internship, I learned how to work in a team and also developed an order office platform to automate the processing of incoming files using Laravel and Angular.</p>
+                <p>During this internship, I learned how to work in a team and also developed an order office platform to automate the processing of incoming files using Laravel and Tailwind Css.</p>
             </div>
         </div>
     </section>
@@ -333,13 +333,13 @@
         </div>
 
     </section>
-    <!-- !!!!! -->
+    <!-- !!Projcts Section -->
 
     <h1 class="sub-title bg-black">My<span> Projects</span></h1>
     <section class="projects" id="projects">
 
         <div class="contain">
-            <div class="grid">
+            <div class="grid-projects">
 
                 <div class="card">
                     <img src="/assets/EduHub.png" alt="Project Image">
@@ -385,7 +385,7 @@
                         <div class="tags">
                             <span>NodeJs</span>
                             <span>ReactJs</span>
-                            <span>Tailwind</span>
+                            <span>Tailwind CSS</span>
                             <span>MySQL</span>
                         </div>
                         <a href="https://github.com/docRequestManagement/doc_request_management_FE" target="_blank"
@@ -397,22 +397,38 @@
                 </div>
 
                 <div class="card">
-                    <img src="/assets/emp-Management-System.png" alt="Project Image">
+                    <img src="/assets/locVoitures.png" alt="Project Image">
                     <div class="card-content">
-                        <h3>Employees Management System</h3>
-                        <p>This platform provides the ability to manage and organize your employee list efficiently.</p>
+                        <h3>LocationVoitures</h3>
+                        <p>This platform provides an efficient and intuitive way to manage vehicle fleets, client reservations, and rental operations for a car rental agency.</p>
                         <div class="tags">
-                            <span>SpringBoot</span>
+                            <span>Django</span>
                             <span>ReactJs</span>
-                            <span>Tailwind CSS</span>
-                            <span>MySQL</span>
+                            <span>MongoDB</span>
+                            <span>MUI</span>
                         </div>
-                        <a href="https://github.com/aya2705/emp-management-system" target="_blank"
-                            class="github-btn">Voir sur GitHub</a>
+                        <a href="https://github.com/LocationVoituresEnsate/frontend" target="_blank"
+                            class="github-btn">Voir sur GitHub(FE)</a>
+                        <a href="https://github.com/LocationVoituresEnsate/Backend" target="_blank"
+                            class="github-btn">Voir sur GitHub(BE)</a>
                     </div>
                 </div>
 
-
+                <div class="card">
+                    <img src="/assets/astucePro.png" alt="Project Image">
+                    <div class="card-content">
+                        <h3>AstucePro</h3>
+                        <p> This platform is a space where students can share study tips, exchange academic resources, and support each other throughout their educational journey.</p>
+                        <div class="tags">
+                            <span>SpringBoot</span>
+                            <span>ReactJs</span>
+                            <span>MySql</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <a href="https://github.com/aya2705/AstucePro" target="_blank"
+                            class="github-btn">Voir sur GitHub</a>
+                    </div>
+                </div>
 
                 <div class="card">
                     <img src="/assets/traitement_images.png" alt="Project Image">
@@ -432,6 +448,8 @@
                     </div>
                 </div>
 
+
+
             </div>
         </div>
     </section>
@@ -440,7 +458,7 @@
 
     <!-- !!!!!!!!!!!!! Clubs  -->
     <section class="extracurricular" id="extracurricular">
-        <h1 class="sub-title"> Extracurricular</span></h1>
+        <h1 class="sub-title"> Extracurricular</h1>
 
         <div class="contain-extra">
             <div class="grid">
@@ -628,7 +646,7 @@
     <!-- !!!!footer -->
     <footer class="flex flex-col space-y-10 justify-center m-10">
         <h1 class="text-7xl text-white ml-50 text-center text-extrabold hover:text-blue-400 hover:scale-105 hover:cursor-pointer ">Aya Touicha</h1>
-        <h3 class="text-4xl text-blue-600 ml-50 text-center text-extrabold hover:text-blue-400 hover:scale-105 hover:cursor-pointer ">Etudiante en génie informatique à ENSA Tétouan</h3>
+        <h3 class="text-4xl text-blue-600 ml-50 text-center text-extrabold hover:text-blue-400 hover:scale-105 hover:cursor-pointer ">Software Engineering Student at ENSA Tetouan</h3>
 
         <nav class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
             <a class="text-white text-2xl hover:text-blue-500 hover:cursor-pointer hover:scale-105" href="#">Home</a>
@@ -656,49 +674,19 @@
         <p class="text-center text-gray-200 font-medium hover:text-blue-400 hover:cursor-pointer">&copy; All Rights Are Reserved</p>
     </footer>
       
-        <!-- SVG pour l'effet de filtre -->
         <svg style="position:fixed; top:100vh">
           <defs>
             <filter id="blob">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
               <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"/>
-              <!-- feComposite in="SourceGraphic" in2="blob" operator="atop" --> <!-- Ce code est commenté car il n'est plus nécessaire -->
             </filter>
           </defs>
         </svg>
       </div>
       
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactBtn = document.getElementById('contactBtn');
-            const contactModal = document.getElementById('contactModal');
-            const closeModal = document.getElementById('closeModal');
-            const blurOverlay = document.getElementById('blurOverlay');
-            const contactForm = document.getElementById('contactForm');
+    
 
-            // Ouvrir la modal
-            contactBtn.addEventListener('click', function () {
-                contactModal.classList.add('show');
-                blurOverlay.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // Empêche le défilement
-            });
-
-            // Fermer la modal
-            closeModal.addEventListener('click', function () {
-                contactModal.classList.remove('show');
-                blurOverlay.style.display = 'none';
-                document.body.style.overflow = ''; // Rétablit le défilement
-            });
-
-            // Fermer en cliquant à l'extérieur
-            blurOverlay.addEventListener('click', function () {
-                contactModal.classList.remove('show');
-                blurOverlay.style.display = 'none';
-                document.body.style.overflow = '';
-            });
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
